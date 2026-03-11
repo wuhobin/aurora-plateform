@@ -788,7 +788,7 @@ CREATE TABLE `sys_user`  (
   `mobile` varchar(15) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '手机号',
   `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
   `sex` int NULL DEFAULT NULL COMMENT '性别',
-  `login_type` int NULL DEFAULT 1 COMMENT '登录方式',
+  `login_type` int DEFAULT NULL COMMENT '登录方式',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1811 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户信息表' ROW_FORMAT = DYNAMIC;

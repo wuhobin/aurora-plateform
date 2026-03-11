@@ -32,7 +32,11 @@ public class SaTokenConfigure implements WebMvcConfigurer {
                         "/doc.html",
                         "/doc.html/**",
                         "/favicon.ico",
-                        "/bizFlow/test"
+                        "/bizFlow/test",
+                        "/wx/portal/**",
+                        "/wx/portal",
+                        "/auth/wechat/getCode",
+                        "/auth/wechat/isLogin/**"
                 );
     }
 }

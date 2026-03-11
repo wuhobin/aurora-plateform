@@ -95,7 +95,7 @@ public class OperationLoggerAspect {
         String paramsJson = getParamsJson(point);
 
         // 当前操作用户
-        LoginUserInfo user = (LoginUserInfo) StpUtil.getSession().get(Constants.CURRENT_USER);
+        LoginUserInfo user = JSONUtil.toBean(JSONUtil.toJsonStr(StpUtil.getSession().get(Constants.CURRENT_USER)), LoginUserInfo.class);
         String type = request.getMethod();
         String ip = IpUtils.getIp();
         String url = request.getRequestURI();

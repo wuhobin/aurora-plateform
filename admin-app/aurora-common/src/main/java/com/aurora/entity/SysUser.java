@@ -59,6 +59,9 @@ public class SysUser implements Serializable {
     @Schema(description = "性别")
     private Integer sex;
 
+    @Schema(description = "登录类型")
+    private Integer loginType;
+
     @Schema(description = "上次登录时间")
     @JsonFormat(pattern = DateUtils.YYYY_MM_DD_HH_MM_SS, timezone = "GMT+8")
     private LocalDateTime lastLoginTime;

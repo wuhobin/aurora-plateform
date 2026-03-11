@@ -35,7 +35,7 @@ public class SysRoleController {
         return Result.success(sysRoleService.getById(id));
     }
 
-    @PostMapping
+    @PostMapping("/")
     @OperationLogger(value = "新增角色")
     @Operation(summary = "新增角色")
     @SaCheckPermission("sys:role:add")
@@ -44,7 +44,7 @@ public class SysRoleController {
         return Result.success();
     }
 
-    @PutMapping
+    @PutMapping("/")
     @Operation(summary = "修改角色")
     @OperationLogger(value = "修改角色")
     @SaCheckPermission("sys:role:update")
