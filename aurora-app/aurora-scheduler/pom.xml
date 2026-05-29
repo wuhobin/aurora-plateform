@@ -5,20 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.aurora</groupId>
-        <artifactId>admin-app</artifactId>
+        <artifactId>aurora-app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>aurora-auth</artifactId>
-    <description>认证服务</description>
+    <artifactId>aurora-scheduler</artifactId>
+    <description>定时任务模块</description>
 
     <dependencies>
 
+        <!-- 定时任务 -->
         <dependency>
-            <groupId>com.github.binarywang</groupId>
-            <artifactId>weixin-java-mp</artifactId>
-            <version>4.8.0</version>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
         </dependency>
+
 
         <dependency>
             <groupId>com.aurora</groupId>
@@ -38,5 +39,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>

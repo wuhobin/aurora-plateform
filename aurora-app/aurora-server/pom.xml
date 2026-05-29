@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.aurora</groupId>
-        <artifactId>admin-app</artifactId>
+        <artifactId>aurora-app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -22,13 +22,13 @@
 
         <dependency>
             <groupId>com.aurora</groupId>
-            <artifactId>aurora-file</artifactId>
+            <artifactId>aurora-storage</artifactId>
             <version>${package.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aurora</groupId>
-            <artifactId>aurora-quartz</artifactId>
+            <artifactId>aurora-scheduler</artifactId>
             <version>${package.version}</version>
         </dependency>
 

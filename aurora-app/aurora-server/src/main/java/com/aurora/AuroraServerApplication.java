@@ -11,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @EnableFileStorage
 @MapperScan("com.aurora.mapper")
-public class AuroraAdminApplication {
+public class AuroraServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AuroraAdminApplication.class, args);
+        SpringApplication.run(AuroraServerApplication.class, args);
     }
 } 
