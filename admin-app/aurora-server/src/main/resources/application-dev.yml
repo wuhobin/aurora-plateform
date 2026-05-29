@@ -1,13 +1,4 @@
 spring:
-  application:
-    name: neat-admin
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
-  servlet:
-    multipart:
-      max-file-size: 50MB
-      max-request-size: 50MB
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -48,7 +39,7 @@ springdoc:
   api-docs:
     path: /v3/api-docs
   group-configs:
-    - group: 'default'
+    - group: 'admin'
       paths-to-match: '/**'
       packages-to-scan: com.aurora.controller
 # knife4j的增强配置，不需要增强可以不配
@@ -62,37 +53,30 @@ knife4j:
     password: 123456
   setting:
     language: zh_cn
-#==============================公众号配置==============================
-wechat:
-  app-id:
-  # 公众号AppSecret
-  secret:
-  # 公众号Token
-  token:
-  # 公众号AES Key
-  aesKey:
+
 
 #==============================文件地址配置=======================================
 dromara:
   x-file-storage: #文件存储配置
-    default-platform: local-plus-1 #默认使用的存储平台
+    default-platform: qiniu-kodo-1 #默认使用的存储平台
     thumbnail-suffix: ".min.jpg" #缩略图后缀，例如【.min.jpg】【.png】
-    local-plus:
-      - platform: local-plus-1 # 存储平台标识
-        enable-storage: true  #启用存储
-        enable-access: true #启用访问（线上请使用 Nginx 配置，效率更高）
-        domain: http://127.0.0.1:8800/localFile/ # 访问域名，例如：“http://127.0.0.1:8030/file/”，注意后面要和 path-patterns 保持一致，“/”结尾，本地存储建议使用相对路径，方便后期更换域名
-        base-path: local-plus/ # 基础路径
-        path-patterns: /localFile/** # 访问路径
-        storage-path: D:/Temp/ # 存储路径
     qiniu-kodo:
       - platform: qiniu-kodo-1 # 存储平台标识
         enable-storage: true  # 启用存储
-        access-key:
-        secret-key:
-        bucket-name: shiyi-blog
-        domain: https://img.shiyit.com/ # 访问域名，注意“/”结尾，例如：http://abc.hn-bkt.clouddn.com/
+        access-key: gmU3fgKgiJYF4MsZUaKIWu47roQbYFwrXCAmGDxG
+        secret-key: QOe_P_pQg7THeRetMMTNO_ZplkusHOlukej_KIIg
+        bucket-name: codehub-wu
+        domain: https://oss.wuhobin.top/  # 访问域名，注意“/”结尾，例如：http://abc.hn-bkt.clouddn.com/
         base-path: base/ # 基础路径
+
+#==============================微信公众号配置==============================
+wx:
+  mp:
+    configs:
+      - appId: wx24cae73709fe6ff7
+        secret: acad60afb2103bb2f61b00eb6da187f8
+        token: app-token
+        aesKey: aurora
 
 #==============================邮箱配置=======================================
 mail:
@@ -101,13 +85,3 @@ mail:
     port: 25
     email: ${mail.username}
     password: ${mail.password}
-server:
-  port: 8800
-
-wx:
-  mp:
-    configs:
-      - appId: wx24cae73709fe6ff7
-        secret: acad60afb2103bb2f61b00eb6da187f8
-        token: app-token
-        aesKey: aurora
