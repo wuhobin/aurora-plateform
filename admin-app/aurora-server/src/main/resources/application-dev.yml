@@ -85,3 +85,8 @@ mail:
     port: 25
     email: ${mail.username}
     password: ${mail.password}
+
+# ============================== 日志配置 ==============================
+logging:
+  file:
+    path: /app/logs
