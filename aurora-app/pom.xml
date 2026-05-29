@@ -153,6 +153,6 @@
         </plugins>
 
         <!-- 固定Jar包名字 -->
-        <finalName>aurora-admin</finalName>
+        <finalName>aurora-server</finalName>
     </build>
 </project>
